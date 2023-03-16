@@ -43,3 +43,5 @@
 !.yarn/versions
 
 .env
+
+.byebug_history
