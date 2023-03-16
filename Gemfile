@@ -76,4 +76,7 @@ end
 
 gem "dockerfile-rails", ">= 1.2", :group => :development
 
-gem "dotenv-rails", "~> 2.8"
+
+gem "bcrypt", "~> 3.1"
+
+gem "byebug", "~> 11.1"
