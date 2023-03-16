@@ -68,10 +68,12 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     capybara (3.38.0)
       addressable
       matrix
@@ -91,10 +93,6 @@ GEM
       reline (>= 0.3.1)
     dockerfile-rails (1.2.5)
       rails
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -220,12 +218,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1)
   bootsnap
+  byebug (~> 11.1)
   capybara
   cssbundling-rails
   debug
   dockerfile-rails (>= 1.2)
-  dotenv-rails (~> 2.8)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
