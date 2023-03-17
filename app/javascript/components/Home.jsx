@@ -27,6 +27,21 @@ const Home = () => {
     setSearchParams(query);
   };
 
+  const searchForm = (
+    <div className="row">
+      <form>
+        <div className="form-group">
+          <div class="input-group mb-3">
+            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Search by ingredients: butter, salt, flour" />
+            <div className="input-group-append">
+              <button className="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  )
+
   const allRecipes = recipes.map((recipe) => (
     <div key={recipe.id} className="col-md-6 col-lg-4">
       <div className="card" style={{width: '25rem'}}>
@@ -73,6 +88,7 @@ const Home = () => {
       </section>
       <div className="py-5">
         <main className="container">
+          { searchForm }
           <div className="row">
             {recipes.length > 0 ? allRecipes : noRecipe}
           </div>
