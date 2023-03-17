@@ -5,8 +5,8 @@ import Navbar from "../components/Navbar";
 
 export default (
   <Router>
+    <Navbar />
     <Routes>
-      <Navbar />
       <Route path="/" element={<Home />} />
     </Routes>
   </Router>

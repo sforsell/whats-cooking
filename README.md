@@ -23,7 +23,7 @@ Navigate to localhost:3000 and you should see a list of recipes.
 As a visitor...
 
 - [ ] I should be able to see a list of recipes in a paginated list
-- [ ] I should be able to filter recipes on category
+- [x] I should be able to filter recipes on category
 - [ ] I should be able to serach for recipes by title
 - [ ] The recipe author should be a clickable link and I should be able to see a list of recipes by that author when clicked
 - [ ] I should be able to create a new user and log in and out.

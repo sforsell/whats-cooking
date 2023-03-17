@@ -1,5 +1,10 @@
 class RecipesController < ApplicationController
   def index
+  end
+
+  def show
+    params = recipe_params
+    # byebug
     limit = params[:limit] || 20
     offset = params[:offset] || 0
 

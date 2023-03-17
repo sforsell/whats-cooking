@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useMemo } from "react";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 
-const Recipes = () => {
+const Home = () => {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
-  const offsetParam = useState("");
-  const limitParam = useState("");
+  let [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    console.log
-    const url = "/";
+    const url = searchParams ? `/recipes?${searchParams}` : "/recipes";
+
     fetch(url)
       .then((res) => {
         if (res.ok) {
@@ -21,31 +20,38 @@ const Recipes = () => {
       .catch(() => navigate("/"));
   }, []);
 
+  const useQueryParams = (event) => {
+    const url = event.target.href
+    const queryPortion = url.substr(url.indexOf('?'), url.length)
+    const query = useMemo(() => new URLSearchParams(queryPortion), [queryPortion])
+    setSearchParams(query);
+  };
+
   const allRecipes = recipes.map((recipe) => (
     <div key={recipe.id} className="col-md-6 col-lg-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src={recipe.image_url} alt={recipe.title} />
-        <div class="card-body">
-          <h5 class="card-title">{recipe.title}</h5>
-          <p class="card-text">Prep time: {recipe.prep_time} min.</p>
-          <p class="card-text">Cook time: {recipe.cook_time} min.</p>
+      <div className="card" style={{width: '25rem'}}>
+        <img className="card-img-top" src={recipe.image_url} alt={recipe.title} />
+        <div className="card-body">
+          <h5 className="card-title">{recipe.title}</h5>
+          <p className="card-text">Prep time: {recipe.prep_time} min.</p>
+          <p className="card-text">Cook time: {recipe.cook_time} min.</p>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul className="list-group list-group-flush">
           {
-            recipe.ingredients.map((ingredient) => (
-              <li class="list-group-item">{ingredient}</li>
+            recipe.ingredients.map((ingredient, index) => (
+              <li key={index} className="list-group-item">{ingredient}</li>
             ))
           } 
         </ul>
-        <div class="card-body">
+        <div className="card-body">
           <p>
-            Author:  
+            Author:   
             {recipe.author
-              ? <a href="#" class="card-link">{recipe.author}</a>
+              ? <a href="/" className="card-link">{recipe.author}</a>
               : "unknown"
             }
           </p>
-          {recipe.category && <p>Category: <a href="#" class="card-link">{recipe.category}</a></p>}
+          {recipe.category && <p>Category: <Link onClick={useQueryParams} to={`?category=${recipe.category}`} className="card-link" >{recipe.category}</Link></p>}
         </div>
       </div>
     </div>
@@ -76,4 +82,4 @@ const Recipes = () => {
   );
 };
 
-export default Recipes;
+export default Home;
