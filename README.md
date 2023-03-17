@@ -10,7 +10,7 @@ A basic recipe web app build with Rails and React.
 2. run `docker-compose build --build-arg GID=1000 --build-arg UID=1000 web`
 3. run `docker-compose up` to start the server. in another terminal run `docker-compose run web bash`, this will open up a terminal in the docker context. 
 4. run `bin/rails db:migrate` to set up the database schema.
-5. run `bundle exec rake backfill_initial_data:run`. This will start a task that populates the db with records. It takes a long time to run, and will output the id of every recipe that gets created. You can ctrl+c out of it if you don't want to wait for it to finish and think you have enough recipes to play around with. It is safe to restart as it ignores duplicates.
+5. run `bundle exec rake backfill_initial_data:run`. This will start a task that populates the db with records. It takes a long time to run, and will output the id of every recipe that gets created. You can ctrl+c out of it if you don't want to wait for it to finish and think you have enough recipes to play around with.
 6. type  `exit` when you are done to close the terminal.
 
 ### Running locally
