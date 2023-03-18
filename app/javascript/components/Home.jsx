@@ -22,8 +22,7 @@ const Home = () => {
       (queryString, ingr) => queryString + "items[]=" + ingr + "&",
       "/recipes/search?"
     );
-    console.log(url)
-    // fetchRecipes(url);
+    fetchRecipes(url);
   }
 
   useEffect(() => {
