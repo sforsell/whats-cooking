@@ -43,3 +43,9 @@ As a user...
 - [ ] I should be able to edit and delete my recipes
 - [ ] I should be able to rate other users recipes
 - [ ] I should be able to delete my account
+
+## DB Schema
+
+<img width="1056" alt="Screenshot 2023-03-18 at 15 08 32" src="https://user-images.githubusercontent.com/12724098/226112175-44b381a4-4474-44cb-942a-93f3d7b6bdae.png">
+
+Ideally the ingredients.item would be cleaned up/parsed out and there would be a recipe_ingredients table that would store amount, unit recipe_id and ingredient_id. The ingredients table could then focus on storing the actual product/item and be deduped and indexed better.
