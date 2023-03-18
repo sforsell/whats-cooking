@@ -11,7 +11,20 @@ const Home = () => {
   const handleOffsetHrefStrings = (num) => {
     const query = `?${searchParams.get('category') ? 'category='+ searchParams.get('category') + '&' : ''}`
     return query + `offset=${num}`
-  } 
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (event.target.search.value.length === 0) {
+      return;
+    }
+    url = event.target.search.value.split(/,\s*/).reduce(
+      (queryString, ingr) => queryString + "items[]=" + ingr + "&",
+      "/recipes/search?"
+    );
+    console.log(url)
+    // fetchRecipes(url);
+  }
 
   useEffect(() => {
     // handle search params
@@ -47,18 +60,18 @@ const Home = () => {
 
   const searchForm = (
     <div className="row">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <div class="input-group mb-3">
-            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Search by ingredients: butter, salt, flour" />
+          <div className="input-group mb-3">
+            <input type="text" className="form-control" name="search" id="search-terms" placeholder="Search by ingredients: butter, salt, flour" />
             <div className="input-group-append">
-              <button className="btn btn-outline-secondary" type="button">Search</button>
+              <button className="btn btn-outline-secondary" type="submit">Search</button>
             </div>
           </div>
         </div>
       </form>
     </div>
-  )
+  );
 
   const allRecipes = recipes.map((recipe) => (
     <div key={recipe.id} className="col-md-6 col-lg-3">
