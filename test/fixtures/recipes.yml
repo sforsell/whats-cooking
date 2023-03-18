@@ -1,0 +1,23 @@
+pancakes:
+  title: Basic Pancakes
+  cook_time: 0
+  prep_time: 0
+  author: becky
+  category: breakfast
+  created_at: "2023-03-16T14:35:19.248Z"
+  updated_at: "2023-03-16T14:35:19.248Z"
+
+all_about_jello:
+  title: So much Jello
+  cook_time: 0
+  prep_time: 0
+
+cake:
+  title: Jell-O cake
+  cook_time: 0
+  prep_time: 0
+
+donut:
+  title: Jelly donut
+  cook_time: 0
+  prep_time: 0
