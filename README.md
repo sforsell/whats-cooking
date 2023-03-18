@@ -29,7 +29,8 @@ As a visitor...
 
 - [x] I should be able to see a list of recipes in a paginated list
 - [x] I should be able to filter recipes on category
-- [ ] I should be able to search recipes by ingredients, seeing the recipes with the most matches first
+- [x] I should be able to search recipes by ingredients, seeing the recipes with the most matches first
+  *pagination NOT working with this atm, limiting to 50 results*
 - [ ] I should be able to search for recipes by title
 - [ ] The recipe author should be a clickable link and I should be able to see a list of recipes by that author when clicked
 - [ ] I should be able to create a new user and log in and out.
