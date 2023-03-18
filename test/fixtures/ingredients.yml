@@ -1,0 +1,43 @@
+jello_1:
+  item: 4 kg Jell-O
+  recipe: all_about_jello
+
+jello_2:
+  item: 4 kg Jell-O
+  recipe: all_about_jello
+
+jello_3:
+  item: 4 kg Jell-O
+  recipe: all_about_jello
+
+jello_4:
+  item: 4 kg Jell-O
+  recipe: all_about_jello
+
+pancake_1:
+  item: 2 Organic Eggs
+  recipe: pancakes
+
+pancake_2:
+  item: 1 T unsalted butter
+  recipe: pancakes
+
+cake_1:
+  item: 1 pack green Jell-O
+  recipe: cake
+
+cake_2:
+  item: 1 pack yellow Jell-O
+  recipe: cake
+
+donut_1:
+  item: 1 lbs sugar
+  recipe: donut
+
+donut_2:
+  item: 2 Eggs
+  recipe: donut
+
+donut_3:
+  item: 1 pack red Jell-O
+  recipe: donut

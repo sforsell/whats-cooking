@@ -18,8 +18,8 @@ A basic recipe web app build with Rails and React.
 1. run `bundle install`. (assumes you have [Bundler](https://bundler.io/guides/getting_started.html) installed)
 2. run `rails db:create`, followed by `rails db:migrate`. This will set up your database and schema. 
 3. Run step 5 under the docker instructions to populate the db with data.
-3. Run `yarn install` to build your node_modules.
-4. Run `bin/dev` to start the server.
+4. Run `yarn install` to build your node_modules.
+5. Run `bin/dev` to start the server.
 
 Navigate to localhost:3000 and you should see a list of recipes. 
 
@@ -29,6 +29,8 @@ As a visitor...
 
 - [x] I should be able to see a list of recipes in a paginated list
 - [x] I should be able to filter recipes on category
+- [x] I should be able to search recipes by ingredients, seeing the recipes with the most matches first
+  *pagination NOT working with this atm, limiting to 50 results*
 - [ ] I should be able to search for recipes by title
 - [ ] The recipe author should be a clickable link and I should be able to see a list of recipes by that author when clicked
 - [ ] I should be able to create a new user and log in and out.
